@@ -1,191 +1,98 @@
-# 📚 Library Management System
+# 📚 Booksmith — Library Management System
 
 [![Java](https://img.shields.io/badge/Java-17+-orange.svg)](https://www.oracle.com/java/)
 [![OOP](https://img.shields.io/badge/Programming-OOP-blue.svg)]()
 [![File Handling](https://img.shields.io/badge/Storage-File%20Handling-green.svg)]()
 [![Console App](https://img.shields.io/badge/Interface-Console-yellow.svg)]()
 
-A comprehensive **Library Management System** built using Object-Oriented Programming principles in Java. This project demonstrates **classes, inheritance, polymorphism, encapsulation, and file handling** for managing books, members, and library operations.
+**Booksmith** is a comprehensive **Library Management System** built with Java and Object-Oriented Programming principles. It provides a practical way to manage books, members, librarians, borrowing operations, and library records through a structured console interface.
+
+The project demonstrates core Java concepts including **classes, inheritance, polymorphism, encapsulation, abstraction, collections, file handling, and data persistence**.
+
+> **Customized and maintained by Saif Yaseen.**
+
+---
 
 ## 🎯 Project Overview
 
-This Library Management System showcases core OOP concepts through a practical application that handles:
-- **Book Management**: Add, search, issue, and return books
-- **Member Management**: Register members with different membership types
-- **Librarian Management**: Staff management with administrative privileges
-- **File Persistence**: Data storage using file handling techniques
-- **Inheritance Hierarchy**: Person → Member/Librarian classes
-- **Polymorphism**: Method overriding and abstract classes
+Booksmith provides a complete set of features for managing day-to-day library operations:
+
+* **Book Management** — Add, search, issue, and return books
+* **Member Management** — Register and manage different membership types
+* **Librarian Management** — Manage librarian profiles and administrative information
+* **File Persistence** — Store application data using local files
+* **Inheritance Hierarchy** — `Person → Member / Librarian`
+* **Polymorphism** — Abstract methods and method overriding
+* **Library Statistics** — View useful information about books and members
+* **Backup Support** — Create backups of stored library data
+
+---
 
 ## 🔧 OOP Concepts Demonstrated
 
-### 1. **Classes and Objects**
-- `Book`: Represents library books with properties and methods
-- `Person`: Abstract base class for all library users
-- `Member`: Library members who can borrow books
-- `Librarian`: Staff with administrative privileges
-- `Library`: Main business logic class
-- `FileHandler`: Utility class for data persistence
+### 1. Classes and Objects
 
-### 2. **Inheritance**
-```java
+The project uses multiple classes to represent real-world library entities:
+
+* `Book` — Represents books and their current status
+* `Person` — Abstract base class for library users
+* `Member` — Represents library members
+* `Librarian` — Represents library staff
+* `Library` — Handles the main library operations
+* `FileHandler` — Handles file-based data persistence
+
+### 2. Inheritance
+
+```text
 Person (Abstract Base Class)
 ├── Member (extends Person)
 └── Librarian (extends Person)
 ```
 
-### 3. **Encapsulation**
-- Private fields with public getter/setter methods
-- Data validation and business logic encapsulation
-- Protected access for inheritance
+### 3. Encapsulation
 
-### 4. **Polymorphism**
-- Abstract methods in `Person` class
-- Method overriding in subclasses
-- Interface-like behavior through abstract methods
+The application uses:
 
-### 5. **File Handling**
-- Reading/writing data to text files
-- CSV-format data storage
-- Backup and restore functionality
-- Error handling for file operations
+* Private fields
+* Public getter/setter methods
+* Data validation
+* Encapsulated business logic
+* Protected members where required for inheritance
 
-## 📸 Screenshots
+### 4. Polymorphism
+
+Polymorphism is demonstrated through:
+
+* Abstract methods in the `Person` class
+* Method overriding
+* Different implementations of inherited behavior
+
+### 5. File Handling
+
+Booksmith stores data locally using file handling:
+
+* Reading and writing text files
+* CSV-style data storage
+* Backup functionality
+* Error handling for file operations
+
+---
+
+## 📸 User Interface
+
+Booksmith uses a structured console interface designed to make navigation simple and readable.
 
 ### Main Menu
-![Main Menu](screenshots/main-menu.png)
 
-### Book Management
-![Book Management](screenshots/book-management.png)
-
-
-## 🚀 Features
-
-### 📖 Book Management
-- ✅ Add new books to the library
-- ✅ Search books by title, author, category, or ID
-- ✅ View available and issued books
-- ✅ Track book status (available/issued)
-- ✅ Detailed book information display
-
-### 👥 Member Management
-- ✅ Register new members with different types:
-  - **Regular**: 3 books maximum
-  - **Premium**: 10 books maximum  
-  - **Student**: 5 books maximum
-- ✅ View member information and issued books
-- ✅ Track membership dates and types
-
-### 👨‍💼 Librarian Management
-- ✅ Add librarian profiles with employee details
-- ✅ Department and salary management
-- ✅ Administrative privileges for book operations
-
-### 🔄 Issue/Return System
-- ✅ Issue books to members with date tracking
-- ✅ Return books with validation
-- ✅ Automatic due date calculation (14 days)
-- ✅ Member book limit enforcement
-- ✅ Book availability checking
-
-### 💾 Data Persistence
-- ✅ File-based storage (no database required)
-- ✅ Automatic data loading on startup
-- ✅ Data backup functionality
-- ✅ CSV format for easy data inspection
-
-### 📊 Reports and Statistics
-- ✅ Library statistics dashboard with table format
-- ✅ Books by category breakdown
-- ✅ Members by type analysis
-- ✅ Available vs issued books tracking
-
-### 🎨 User Interface
-- ✅ Professional table-based console interface
-- ✅ Unicode box-drawing characters for clean borders
-- ✅ Auto-adjusting column widths
-- ✅ Consistent formatting across all menus and data displays
-
-## 📁 Project Structure
-
-```
-LibraryManagementSystem/
-├── src/
-│   ├── Book.java                    # Book class with properties and methods
-│   ├── Person.java                  # Abstract base class for inheritance
-│   ├── Member.java                  # Member class extending Person
-│   ├── Librarian.java              # Librarian class extending Person
-│   ├── Library.java                # Main business logic class
-│   ├── FileHandler.java            # File operations utility class
-│   └── LibraryManagementApp.java   # Main application with menu system
-├── data/                           # Data storage directory (auto-created)
-│   ├── books.txt                   # Books data file
-│   ├── members.txt                 # Members data file
-│   └── librarians.txt              # Librarians data file
-├── build/                          # Compiled class files (auto-created)
-├── docs/                           # Documentation directory
-├── compile_and_run.bat            # Windows compilation script
-├── run.bat                        # Windows quick run script
-└── README.md                      # This documentation
-```
-
-## 🚀 Quick Start
-
-### Prerequisites
-- **Java JDK 8 or higher** installed
-- Command prompt or terminal access
-- Windows OS (for batch files) or any OS with Java
-
-### Method 1: Using Batch Files (Windows)
-```bash
-# Clone or download the project
-cd LibraryManagementSystem
-
-# Compile and run (first time)
-.\compile_and_run.bat
-
-# Quick run (subsequent times)
-.\run.bat
-```
-
-### Method 2: Manual Compilation
-```bash
-# Navigate to project directory
-cd LibraryManagementSystem
-
-# Create build directory
-mkdir build
-
-# Compile all Java files
-javac -d build src/*.java
-
-# Run the application
-cd build
-java LibraryManagementApp
-```
-
-### Method 3: Using IDE
-1. Import the project into your Java IDE (IntelliJ IDEA, Eclipse, etc.)
-2. Set the `src` folder as the source directory
-3. Run the `LibraryManagementApp.java` file
-
-
-## 🎮 How to Use
-
-### 1. **First Launch**
-- Application automatically creates sample data
-- Sample books, members, and librarian are added
-- Data files are created in the `data/` directory
-
-### 2. **Main Menu Navigation**
-```
+```text
 ┌──────────────────────────────────────────────────┐
-│            LIBRARY MANAGEMENT SYSTEM             │
+│                    BOOKSMITH                     │
+│              LIBRARY MANAGEMENT SYSTEM           │
 ├──────────────────────────────────────────────────┤
 │ 1. Book Management                               │
 │ 2. Member Management                             │
 │ 3. Librarian Management                          │
-│ 4. Issue/Return Books                            │
+│ 4. Issue / Return Books                           │
 │ 5. Search & Display                              │
 │ 6. Library Statistics                            │
 │ 7. Backup Data                                   │
@@ -193,217 +100,588 @@ java LibraryManagementApp
 └──────────────────────────────────────────────────┘
 ```
 
-### 3. **Sample Operations**
+The interface uses:
 
-#### Issue a Book:
-1. Select "Issue/Return Books" → "Issue Book to Member"
-2. Enter Book ID: `B001`
-3. Enter Member ID: `M001`
-4. System automatically calculates return date (14 days)
+* Clean menu navigation
+* Unicode box-drawing characters
+* Formatted tables
+* Consistent headings
+* Structured information displays
+* Auto-adjusting table columns
 
-#### Add New Member:
-1. Select "Member Management" → "Add New Member"
-2. Fill in member details
-3. Choose membership type (Regular/Premium/Student)
-4. Member is registered with appropriate book limits
+---
 
-#### Search Books:
-1. Select "Search & Display" → "Search Books"
-2. Enter search query (title, author, category, or ID)
-3. View matching results
+# 🚀 Features
 
-## 📊 Sample Data
+## 📖 Book Management
 
-### Default Books:
-- **B001**: Java Programming by James Gosling
-- **B002**: Data Structures by Robert Lafore
-- **B003**: Clean Code by Robert Martin
-- **B004**: Design Patterns by Gang of Four
-- **B005**: Algorithms by Thomas Cormen
+* ✅ Add new books
+* ✅ Search books by title
+* ✅ Search books by author
+* ✅ Search books by category
+* ✅ Search books by ID
+* ✅ View available books
+* ✅ View issued books
+* ✅ Track book status
+* ✅ Display detailed book information
 
-### Default Members:
-- **M001**: John Doe (Regular - 3 books max)
-- **M002**: Jane Smith (Premium - 10 books max)
-- **M003**: Bob Johnson (Student - 5 books max)
+## 👥 Member Management
 
-### Default Librarian:
-- **L001**: Alice Wilson (Main Library Department)
+Booksmith supports different membership types:
 
-## 🔍 OOP Implementation Details
+| Membership | Maximum Books |
+| ---------- | ------------: |
+| Regular    |             3 |
+| Premium    |            10 |
+| Student    |             5 |
 
-### Inheritance Hierarchy
+Members can be:
+
+* Registered
+* Viewed
+* Searched
+* Associated with issued books
+* Tracked by membership type
+
+## 👨‍💼 Librarian Management
+
+Librarian functionality includes:
+
+* Add librarian profiles
+* Store employee information
+* Department management
+* Salary information
+* Administrative library operations
+
+## 🔄 Issue and Return System
+
+* ✅ Issue books to members
+* ✅ Return books
+* ✅ Check book availability
+* ✅ Validate member limits
+* ✅ Track issue dates
+* ✅ Automatically calculate due dates
+* ✅ Enforce borrowing restrictions
+
+The default borrowing period is **14 days**.
+
+## 💾 Data Persistence
+
+No external database is required.
+
+The application uses local files for storage:
+
+* Books
+* Members
+* Librarians
+* Backup data
+
+Data is automatically loaded when the application starts.
+
+## 📊 Reports and Statistics
+
+Booksmith provides statistics including:
+
+* Total number of books
+* Available books
+* Issued books
+* Books by category
+* Members by membership type
+* Library activity information
+
+---
+
+# 📁 Project Structure
+
+```text
+Booksmith/
+├── src/
+│   ├── Book.java
+│   ├── Person.java
+│   ├── Member.java
+│   ├── Librarian.java
+│   ├── Library.java
+│   ├── FileHandler.java
+│   └── LibraryManagementApp.java
+│
+├── data/
+│   ├── books.txt
+│   ├── members.txt
+│   └── librarians.txt
+│
+├── build/
+├── docs/
+├── compile_and_run.bat
+├── run.bat
+└── README.md
+```
+
+---
+
+# 🚀 Quick Start
+
+## Prerequisites
+
+Before running Booksmith, make sure you have:
+
+* **Java JDK 8 or higher**
+* Command Prompt or terminal
+* Windows for the included `.bat` scripts, or another operating system for manual compilation
+
+---
+
+## Method 1 — Windows Batch Files
+
+Navigate to the project directory:
+
+```bash
+cd Booksmith
+```
+
+Compile and run for the first time:
+
+```bash
+.\compile_and_run.bat
+```
+
+For subsequent runs:
+
+```bash
+.\run.bat
+```
+
+---
+
+## Method 2 — Manual Compilation
+
+Navigate to the project:
+
+```bash
+cd Booksmith
+```
+
+Create the build directory:
+
+```bash
+mkdir build
+```
+
+Compile:
+
+```bash
+javac -d build src/*.java
+```
+
+Run:
+
+```bash
+cd build
+java LibraryManagementApp
+```
+
+---
+
+## Method 3 — Using an IDE
+
+You can open the project using:
+
+* IntelliJ IDEA
+* Eclipse
+* VS Code with Java extensions
+* Other Java-compatible IDEs
+
+Set the `src` directory as the source directory and run:
+
+```text
+LibraryManagementApp.java
+```
+
+---
+
+# 🎮 How to Use
+
+## 1. First Launch
+
+When Booksmith starts, the application can create sample library data.
+
+Sample data is stored in:
+
+```text
+data/
+```
+
+## 2. Main Menu
+
+```text
+┌──────────────────────────────────────────────────┐
+│                    BOOKSMITH                     │
+├──────────────────────────────────────────────────┤
+│ 1. Book Management                               │
+│ 2. Member Management                             │
+│ 3. Librarian Management                          │
+│ 4. Issue / Return Books                           │
+│ 5. Search & Display                              │
+│ 6. Library Statistics                            │
+│ 7. Backup Data                                   │
+│ 8. Exit                                          │
+└──────────────────────────────────────────────────┘
+```
+
+## 3. Issue a Book
+
+Example:
+
+```text
+1. Select Issue / Return Books
+2. Select Issue Book
+3. Enter Book ID: B001
+4. Enter Member ID: M001
+```
+
+The system automatically calculates the return date.
+
+Default borrowing period:
+
+```text
+14 days
+```
+
+## 4. Add a Member
+
+Navigate to:
+
+```text
+Member Management
+        ↓
+Add New Member
+```
+
+Then enter the member information and select:
+
+```text
+Regular
+Premium
+Student
+```
+
+The appropriate borrowing limit is automatically applied.
+
+## 5. Search Books
+
+Navigate to:
+
+```text
+Search & Display
+        ↓
+Search Books
+```
+
+Books can be searched using:
+
+* Book ID
+* Title
+* Author
+* Category
+
+---
+
+# 📊 Sample Data
+
+## Default Books
+
+| ID   | Book             | Author        |
+| ---- | ---------------- | ------------- |
+| B001 | Java Programming | James Gosling |
+| B002 | Data Structures  | Robert Lafore |
+| B003 | Clean Code       | Robert Martin |
+| B004 | Design Patterns  | Gang of Four  |
+| B005 | Algorithms       | Thomas Cormen |
+
+## Default Members
+
+| ID   | Member      | Type    | Limit |
+| ---- | ----------- | ------- | ----: |
+| M001 | John Doe    | Regular |     3 |
+| M002 | Jane Smith  | Premium |    10 |
+| M003 | Bob Johnson | Student |     5 |
+
+## Default Librarian
+
+| ID   | Name         | Department   |
+| ---- | ------------ | ------------ |
+| L001 | Alice Wilson | Main Library |
+
+---
+
+# 🔍 OOP Implementation
+
+## Inheritance
+
 ```java
-// Abstract base class
 public abstract class Person {
-    protected String id, name, email, phone, address;
+    protected String id;
+    protected String name;
+    protected String email;
+    protected String phone;
+    protected String address;
+
     public abstract String getRole();
     public abstract void displayInfo();
     public abstract String toFileString();
 }
+```
 
-// Concrete implementations
+### Member
+
+```java
 public class Member extends Person {
     private String membershipType;
     private List<String> issuedBooks;
-    // Member-specific methods
-}
 
-public class Librarian extends Person {
-    private String employeeId, department;
-    private double salary;
-    // Librarian-specific methods
+    // Member-specific functionality
 }
 ```
 
-### Encapsulation Example
+### Librarian
+
+```java
+public class Librarian extends Person {
+    private String employeeId;
+    private String department;
+    private double salary;
+
+    // Librarian-specific functionality
+}
+```
+
+---
+
+## Encapsulation
+
+The `Book` class demonstrates encapsulation through private fields and controlled access:
+
 ```java
 public class Book {
-    private String bookId;        // Private fields
+
+    private String bookId;
     private boolean isIssued;
-    
-    public String getBookId() {   // Public getter
+
+    public String getBookId() {
         return bookId;
     }
-    
-    public boolean issueBook(String memberId, String issueDate, String returnDate) {
-        if (!isIssued) {          // Business logic encapsulation
+
+    public boolean issueBook(
+            String memberId,
+            String issueDate,
+            String returnDate
+    ) {
+
+        if (!isIssued) {
             this.isIssued = true;
-            // ... more logic
+
+            // Additional issue logic
+
             return true;
         }
+
         return false;
     }
 }
 ```
 
-### File Handling Implementation
+---
+
+## File Handling
+
+Booksmith uses Java I/O classes to save library data:
+
 ```java
-// Save data to file
 public static boolean saveBooks(List<Book> books) {
-    try (BufferedWriter writer = new BufferedWriter(new FileWriter(BOOKS_FILE))) {
+
+    try (
+        BufferedWriter writer =
+            new BufferedWriter(
+                new FileWriter(BOOKS_FILE)
+            )
+    ) {
+
         for (Book book : books) {
             writer.write(book.toFileString());
             writer.newLine();
         }
+
         return true;
+
     } catch (IOException e) {
-        System.err.println("Error saving books: " + e.getMessage());
+
+        System.err.println(
+            "Error saving books: " + e.getMessage()
+        );
+
         return false;
     }
 }
 ```
 
-## 📈 Learning Outcomes
+---
 
-This project demonstrates:
+# 📈 Learning Outcomes
 
-### 🎯 **Core OOP Principles**
-- **Encapsulation**: Data hiding and method encapsulation
-- **Inheritance**: Code reuse through class hierarchy
-- **Polymorphism**: Method overriding and abstract methods
-- **Abstraction**: Abstract classes and interfaces
+This project demonstrates practical understanding of:
 
-### 💾 **File Handling Skills**
-- Reading and writing text files
-- CSV data format handling
-- Error handling for I/O operations
-- Data persistence without databases
+### 🎯 Core OOP
 
-### 🏗️ **Software Design Patterns**
-- Repository pattern (Library class)
-- Factory pattern (object creation from file strings)
-- Template method pattern (abstract Person class)
+* Encapsulation
+* Inheritance
+* Polymorphism
+* Abstraction
+* Classes and objects
+* Method overriding
 
-### 🔧 **Programming Best Practices**
-- Input validation and error handling
-- Clean code structure and documentation
-- Separation of concerns
-- User-friendly console interface
+### 💾 File Handling
 
-## 🚀 Future Enhancements
+* Reading files
+* Writing files
+* Data persistence
+* CSV-style storage
+* Exception handling
 
-### 🌟 Potential Improvements
-- [ ] **GUI Interface**: Swing or JavaFX implementation
-- [ ] **Database Integration**: MySQL or SQLite support
-- [ ] **Advanced Search**: Multiple criteria filtering
-- [ ] **Fine Management**: Late return penalties
-- [ ] **Email Notifications**: Due date reminders
-- [ ] **Barcode Support**: Book scanning functionality
-- [ ] **Reports Generation**: PDF export capabilities
-- [ ] **Multi-library Support**: Branch management
+### 🏗️ Software Design
 
-### 🔧 Technical Improvements
-- [ ] **Unit Testing**: JUnit test cases
-- [ ] **Logging**: Log4j integration
-- [ ] **Configuration**: Properties file support
-- [ ] **Validation**: Input validation framework
-- [ ] **Security**: User authentication system
+* Separation of responsibilities
+* Reusable classes
+* Business logic organization
+* Object-oriented architecture
+* Data management
 
-## 🎓 Educational Value
+### 🔧 Programming Practices
 
-### **Perfect for Learning:**
-- **Java Fundamentals**: Classes, objects, methods
-- **OOP Concepts**: Practical inheritance and polymorphism
-- **File I/O**: Real-world file handling scenarios
-- **Data Structures**: Lists, collections, and algorithms
-- **Software Design**: Clean architecture principles
-- **Problem Solving**: Real-world application development
+* Input validation
+* Error handling
+* Java naming conventions
+* Structured application design
+* User-friendly console interaction
 
-### **Resume Keywords:**
-- Object-Oriented Programming (OOP)
-- Java Programming
-- File Handling and I/O Operations
-- Data Persistence
-- Inheritance and Polymorphism
-- Console Application Development
-- CRUD Operations
-- Software Design Patterns
+---
 
-## 🤝 Contributing
+# 🚀 Future Enhancements
 
-### How to Contribute
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Implement your changes with proper OOP principles
-4. Add comments and documentation
-5. Test thoroughly
-6. Commit changes: `git commit -m 'Add amazing feature'`
-7. Push to branch: `git push origin feature/amazing-feature`
-8. Open a Pull Request
+Possible future improvements include:
+
+* [ ] GUI using Swing or JavaFX
+* [ ] MySQL database integration
+* [ ] SQLite support
+* [ ] Advanced search and filtering
+* [ ] Fine management
+* [ ] Late-return penalties
+* [ ] Email due-date notifications
+* [ ] Barcode scanning
+* [ ] PDF report generation
+* [ ] Multi-library/branch support
+* [ ] JUnit testing
+* [ ] Logging
+* [ ] Configuration files
+* [ ] Authentication and authorization
+
+---
+
+# 🎓 Educational Value
+
+Booksmith can be used to practice:
+
+* Java fundamentals
+* Object-Oriented Programming
+* Classes and objects
+* Inheritance
+* Polymorphism
+* Encapsulation
+* Abstraction
+* File I/O
+* Collections
+* Data persistence
+* Application architecture
+* Problem solving
+
+### Resume Skills Demonstrated
+
+* Java
+* Object-Oriented Programming
+* File Handling
+* Data Persistence
+* Inheritance
+* Polymorphism
+* Encapsulation
+* Abstraction
+* CRUD Operations
+* Console Application Development
+* Software Design
+
+---
+
+# 👨‍💻 Project Information
+
+**Project:** Booksmith — Library Management System
+**Developer / Maintainer:** Saif Yaseen
+**Language:** Java
+**Programming Paradigm:** Object-Oriented Programming
+**Application Type:** Console Application
+**Difficulty:** Intermediate
+**Estimated Development Time:** 2–3 days
+
+This version of Booksmith has been **customized, reworked, and maintained by Saif Yaseen** as a Java/OOP portfolio project.
+
+---
+
+# 🤝 Contributing
+
+Contributions and improvements are welcome.
+
+### Development Workflow
+
+```bash
+git checkout -b feature/new-feature
+```
+
+Implement and test your changes, then:
+
+```bash
+git add .
+git commit -m "Add new feature"
+git push origin feature/new-feature
+```
+
+After pushing, open a Pull Request.
 
 ### Development Guidelines
-- Follow Java naming conventions
-- Maintain OOP principles
-- Add JavaDoc comments for public methods
-- Include error handling
-- Update README for significant changes
 
-## 📄 License
+* Follow Java naming conventions
+* Maintain OOP principles
+* Keep responsibilities separated
+* Add JavaDoc where appropriate
+* Include proper error handling
+* Test changes before committing
+* Update documentation when adding major features
 
-This project is open source and available under the [MIT License](LICENSE).
+---
 
-## 🙏 Acknowledgments
+# 📄 License
 
-- **Java Documentation** for comprehensive language reference
-- **Object-Oriented Programming Principles** for design guidance
-- **File I/O Best Practices** for data persistence implementation
-- **Console Application Design** for user interface patterns
+This project is distributed under the **MIT License**.
+
+See the `LICENSE` file for the complete license terms.
+
+If this repository was adapted from an existing open-source project, retain the original license and required attribution notices.
 
 ---
 
 <div align="center">
 
-### 📚 **Perfect for Academic Projects and Portfolio!**
+# 📚 Booksmith
 
-**Built with ❤️ using Pure Java and OOP Principles**
+### Library Management System
 
-[📖 View Code](src/) • [🐛 Report Bug](issues) • [✨ Request Feature](issues)
+**Built with Java and Object-Oriented Programming**
+
+**Developed and maintained by Saif Yaseen**
 
 </div>
-
----
-
-**Project Type**: Educational/Academic  
-**Difficulty Level**: Intermediate  
-**Estimated Time**: 2-3 days  
-**Learning Focus**: OOP, File Handling, Java Fundamentals
